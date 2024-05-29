@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Listing</title>
+    <style>
+        header {
+            background: linear-gradient(to right, #87CEFA, #ADD8E6);
+            color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+        }
+
+        select, input[type="number"], input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        .button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+            cursor: pointer;
+            width: 100%; /* Set button width */
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<header>
+    <h1>PRIORITY</h1>
+    <nav>
+        <a href="/about" class="button">About</a>
+        <a href="/contacts" class="button">Contacts</a>
+        <a href="/others" class="button">Others</a>
+    </nav>
+</header>
+
+<body>
+<div class="container">
+    <h2>Enter Preferences</h2>
+    <p>(choose N/A if there is no preference on it)</p>
+    <form action="/preferences" method="post">
+        <div class="form-group">
+            <label for="branch">Branch:</label>
+            <select class="form-control" id="branch" name="branch">
+                <option value="0">N/A</option>
+                {% for branch in data['branch'] %}
+                    <option value="{{ branch }}">{{ branch }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="degree">Degree:</label>
+            <select class="form-control" id="degree" name="degree">
+                <option value="0">N/A</option>
+                {% for degree in data['degree'] %}
+                    <option value="{{ degree }}">{{ degree }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="program_duration">Program Duration:</label>
+            <select class="form-control" id="program_duration" name="program_duration">
+                <option value="0">N/A</option>
+                <option value="4 years">4 years</option>
+                <option value="5 years">5 years</option>
+            </select>
+        </div>
+
+        <button type="submit" class="button">Submit</button>
+    </form>
+</div>
+</body>
+</html>

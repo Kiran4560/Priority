@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Dashboard</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    /* CSS Styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-image: url('../static/homebg.jpg');
+      background-size: cover;
+    }
+    header {
+      background: linear-gradient(to right, #87CEFA, #ADD8E6);
+      color: #fff;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .container {
+      padding: 20px;
+      text-align: center;
+    }
+    .user-info {
+      margin-bottom: 20px;
+    }
+    .user-info p {
+      font-size: large;
+      margin: 5px 0;
+      color: #ADD8E6;
+    }
+    .buttons-container {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: center;
+    }
+    .button {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      text-decoration: none;
+      border: none;
+      border-radius: 5px;
+      text-align: center;
+      cursor: pointer;
+      width: 500px; /* Set button width */
+    }
+    .button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>PRIORITY</h1>
+  <nav>
+    <a href="/about" class="button">About</a>
+    <a href="/contacts" class="button">Contacts</a>
+    <a href="/others" class="button">Others</a>
+  </nav>
+</header>
+
+<div class="container">
+  <div class="user-info">
+    <p><b>Name: </b> {{user.name }}</p>
+    <p><b>Email: </b> {{user.email }}</p>
+  </div>
+
+  <div class="buttons-container">
+    <a href="/search" class="button">Search College</a>  
+    <a href="/filter" class="button">Filter Session</a>
+    <a href="/predict" class="button">Most Probable</a>
+    <a href="/logout" class="button">Logout</a>
+    <a href="/new" class="button">New</a> <!-- New button -->
+  </div>
+</div>
+
+</body>
+</html>
+
+
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Login page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<div class="container">
+    <div class=" row justify-content-center">
+        <div class="col-sm-8">
+            <h2>user dashboard</h2>
+            <p><b>Name: </b> {{user.name }}</p>
+            <p><b>Email: </b> {{user.email }}</p>
+            <br>
+            <a href="/predict" class="btn btn-dark">most probable</a>
+            <br>
+            <a href="/search" class="btn btn-dark">Search college</a>
+            <br>
+            <a href="/logout" class="btn btn-dark">Logout</a>
+        </div>
+
+    </div>
+  
+</div>
+
+</body>
+</html>
+-->

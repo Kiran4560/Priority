@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Listing</title>
+    <style>
+        header {
+      background: linear-gradient(to right, #87CEFA, #ADD8E6);
+      color: #fff;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        label {
+            display: block;
+            font-weight: bold;
+        }
+        
+        select, input[type="number"], input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        
+        .button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+            cursor: pointer;
+            width: 100%; /* Set button width */
+        }
+        
+        .button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<header>
+  <h1>PRIORITY</h1>
+  <nav>
+    <a href="/about" class="button">About</a>
+    <a href="/contacts" class="button">Contacts</a>
+    <a href="/others" class="button">Others</a>
+  </nav>
+</header>
+
+<body>
+    <div class="container">
+        <h2>Enter Details</h2>
+        <form action="/colleges" method="post">
+            <div class="form-group">
+                <label for="quota">Quota:</label>
+                <select class="form-control" id="quota" name="quota">
+                    <option value="AI">All India</option>
+                    <option value="AP">Andhra Pradesh</option>
+                    <option value="GO">Goa</option>
+                    <option value="HS">Home State</option>
+                    <option value="JK">Jammu and Kashmir</option>
+                    <option value="LA">Ladakh</option>
+                    <option value="OS">Other State</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="pool">Pool:</label>
+                <select class="form-control" id="pool" name="pool">
+                    <option value="Gender-Neutral">Gender Neutral</option>
+                    <option value="Female-Only">Female Only</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="category">Category:</label>
+                <select class="form-control" id="category" name="Category">
+                    <option value="GEN">GEN</option>
+                    <option value="GEN-EWS">GEN-EWS</option>
+                    <option value="GEN-EWS-PWD">GEN-EWS-PWD</option>
+                    <option value="GEN-PWD">GEN-PWD</option>
+                    <option value="OBC-NCL">OBC-NCL</option>
+                    <option value="OBC-NCL-PWD">OBC-NCL-PWD</option>
+                    <option value="SC">SC</option>
+                    <option value="SC-PWD">SC-PWD</option>
+                    <option value="ST">ST</option>
+                    <option value="ST-PWD">ST-PWD</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="rank">Rank:</label>
+                <input type="number" class="form-control" id="rank" name="rank">
+            </div>
+            <button type="submit" class="button">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
+
+
+
+<!--DOCTYPE html>
+<html>
+<head>
+    <title>Create your list</title>
+</head>
+<body>
+    <h2>Enter Prediction Data</h2>
+    <form action="/colleges" method="post">
+            <div class="form-group">
+              <label for="quota">Quota:</label>
+              <input type="text" class="form-control" id="quota" name="quota">
+            </div>
+            <div class="form-group">
+              <label for="pool">Pool:</label>
+              <input type="text" class="form-control" id="pool" name="pool">
+            </div>
+            <div class="form-group">
+              <label for="Category">category:</label>
+              <input type="text" class="form-control" id="text" name="Category">
+            </div>
+            <div class="form-group">
+              <label for="rank">rank:</label>
+              <input type="number" class="form-control" id="rank" name="rank">
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+</body>
+</html>
+-->

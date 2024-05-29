@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction Form</title>
+    <style>
+      header {
+      background: linear-gradient(to right, #87CEFA, #ADD8E6);
+      color: #fff;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    } 
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        label {
+            display: block;
+            font-weight: bold;
+        }
+        
+        select, input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+    .button {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      text-decoration: none;
+      border: none;
+      border-radius: 5px;
+      text-align: center;
+      cursor: pointer;
+      width: 500px; /* Set button width */
+    }
+    .button:hover {
+      background-color: #0056b3;
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>PRIORITY</h1>
+        <nav>
+            <a href="/about" class="button">About</a>
+            <a href="/contacts" class="button">Contacts</a>
+            <a href="/others" class="button">Others</a>
+        </nav>
+    </header>
+    <div class="container">
+        <h2>Enter Prediction Data</h2>
+        <form id="predictionForm" action="/model" method="post">
+            <div class="form-group">
+                <label for="institute_type">Institute type:</label>
+                <select class="form-control" id="institute_type" name="institute_type">
+                    <option value="0">IIT</option>
+                    <option value="1">NIT</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="quota">Quota:</label>
+                <select class="form-control" id="quota" name="quota">
+                    <option value="0">All India</option>
+                    <option value="1">Andhra Pradesh</option>
+                    <option value="2">Goa</option>
+                    <option value="3">Home State</option>
+                    <option value="4">Jammu and Kashmir</option>
+                    <option value="5">Ladakh</option>
+                    <option value="6">Other State</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="pool">Pool:</label>
+                <select class="form-control" id="pool" name="pool">
+                    <option value="0">Gender Neutral</option>
+                    <option value="1">Female Only</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="category">Category:</label>
+                <select class="form-control" id="category" name="Category">
+                    <option value="0">GEN</option>
+                    <option value="1">GEN-EWS</option>
+                    <option value="2">GEN-EWS-PWD</option>
+                    <option value="3">GEN-PWD</option>
+                    <option value="4">OBC-NCL</option>
+                    <option value="5">OBC-NCL-PWD</option>
+                    <option value="6">SC</option>
+                    <option value="7">SC-PWD</option>
+                    <option value="8">ST</option>
+                    <option value="9">ST-PWD</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="rank">Rank:</label>
+                <input type="number" class="form-control" id="rank" name="rank">
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        // Convert selected option text to integer and set as value
+        document.getElementById('predictionForm').addEventListener('submit', function () {
+            var rankInput = document.getElementById('rank');
+            var rankValue = parseInt(rankInput.value);
+            if (!isNaN(rankValue)) {
+                rankInput.value = rankValue;
+            }
+        });
+    </script>
+</body>
+</html>
+
+
+<!--DOCTYPE html>
+<html>
+<head>
+    <title>Prediction Form</title>
+</head>
+<body>
+    <h2>Enter Prediction Data</h2>
+    <form id="predictionForm" action="/model" method="post">
+        <div class="form-group">
+            <label for="institute_type">Institute type:</label>
+            <select class="form-control" id="institute_type" name="institute_type">
+                <option value="0">IIT</option>
+                <option value="1">NIT</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="quota">Quota:</label>
+            <select class="form-control" id="quota" name="quota">
+                <option value="0">All India</option>
+                <option value="1">Andhra Pradesh</option>
+                <option value="2">Goa</option>
+                <option value="3">Home State</option>
+                <option value="4">Jammu and Kashmir</option>
+                <option value="5">Ladakh</option>
+                <option value="6">Other State</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="pool">Pool:</label>
+            <select class="form-control" id="pool" name="pool">
+                <option value="0">Gender Neutral</option>
+                <option value="1">Female Only</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="Category">Category:</label>
+            <select class="form-control" id="category" name="Category">
+                <option value="0">GEN</option>
+                <option value="1">GEN-EWS</option>
+                <option value="2">GEN-EWS-PWD</option>
+                <option value="3">GEN-PWD</option>
+                <option value="4">OBC-NCL</option>
+                <option value="5">OBC-NCL-PWD</option>
+                <option value="6">SC</option>
+                <option value="7">SC-PWD</option>
+                <option value="8">ST</option>
+                <option value="9">ST-PWD</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="rank">Rank:</label>
+            <input type="number" class="form-control" id="rank" name="rank">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+
+    <script>
+        // Convert selected option text to integer and set as value
+        document.getElementById('predictionForm').addEventListener('submit', function () {
+            var rankInput = document.getElementById('rank');
+            var rankValue = parseInt(rankInput.value);
+            if (!isNaN(rankValue)) {
+                rankInput.value = rankValue;
+            }
+        });
+    </script>
+</body>
+</html>
+-->
